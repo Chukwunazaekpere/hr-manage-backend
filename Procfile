@@ -1,0 +1,1 @@
+web: gunicorn hr_manage.wsgi --log-file -
