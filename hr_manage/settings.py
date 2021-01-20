@@ -74,6 +74,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'hr_manage.wsgi.application'
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+APPEND_SLASH=False
+
+SITE_ID = 1
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -130,3 +135,36 @@ STATIC_URL = '/static/'
 # Heroku settings.
 import django_heroku
 django_heroku.settings(locals())
+
+
+# import sys
+
+# INTERNAL_IPS = [
+#      # Any fixed internal IPs
+# ]
+
+# INTERNAL_HOSTS = [
+#     # Some dyndns host
+#     # Some no-ip host
+#     # etc...
+
+#     # For example:
+#     'wol.ph',
+# ]
+
+# # Only enable when running through the runserver command
+# if 'runserver' in sys.argv:
+#     import dns.resolver
+
+#     resolver = dns.resolver.Resolver()
+#     # Set the timeout to 1 so we don't wait too long
+#     resolver.timeout = 1
+#     resolver.lifetime = 1
+
+#     for host in INTERNAL_HOSTS:
+#         try:
+#             # For ipv6 you can use AAAA instead of A here
+#             ip = resolver.query(host, 'A')[0].address
+#             INTERNAL_IPS.append(ip)
+#         except dns.exception.Timeout:
+#             print('Unable to resolve %r, skipping' % host)
